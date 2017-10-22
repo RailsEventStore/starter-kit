@@ -8,8 +8,6 @@ Bundler.require(*Rails.groups)
 
 module StarterKit
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.event_store = RailsEventStore::Client.new
   end
 end
