@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## RailsEventStory starter kit
 
-Things you may want to cover:
+This repository is intended to serve as a starter kit for event-driven Rails apps.
 
-* Ruby version
+The expected flow is to clone this repo and start working on your event-driven Rails app:
 
-* System dependencies
+```
+git clone ...
+rails db:setup
+```
 
-* Configuration
+It works with sqlite3 database as a (Rails) default.
+It doesn't come with rspec, you can rely on minitest (Rails default) or choose to install rspec-rails.
 
-* Database creation
+It has the event_store and command_bus set up.
+Both objects are available in all controllers. They are instantiated in the config/application.rb file.
 
-* Database initialization
+It is ready to work with the `aggregate_root` gem. The configuration gives the instance to event_store directly (see config/application.rb file).
 
-* How to run the test suite
+It comes with the bounded_context gem so a likely next step is to generate a bounded context with:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+rails generate bounded_context:generator Sales
+```
 
-* Deployment instructions
+The code here is meant to work with Rails autoloading.
 
-* ...
