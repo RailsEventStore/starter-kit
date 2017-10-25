@@ -1,6 +1,6 @@
 # README
 
-## RailsEventStory starter kit
+## RailsEventStore starter kit
 
 This repository is intended to serve as a starter kit for event-driven Rails apps.
 
