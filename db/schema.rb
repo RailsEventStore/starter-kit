@@ -12,17 +12,23 @@
 
 ActiveRecord::Schema.define(version: 20171021160551) do
 
-  create_table "event_store_events", force: :cascade do |t|
-    t.string   "stream",     null: false
+  create_table "event_store_events", id: :string, limit: 36, force: :cascade do |t|
     t.string   "event_type", null: false
-    t.string   "event_id",   null: false
     t.text     "metadata"
     t.text     "data",       null: false
     t.datetime "created_at", null: false
     t.index ["created_at"], name: "index_event_store_events_on_created_at"
-    t.index ["event_id"], name: "index_event_store_events_on_event_id", unique: true
-    t.index ["event_type"], name: "index_event_store_events_on_event_type"
-    t.index ["stream"], name: "index_event_store_events_on_stream"
+    t.index ["id"], name: "sqlite_autoindex_event_store_events_1", unique: true
+  end
+
+  create_table "event_store_events_in_streams", force: :cascade do |t|
+    t.string   "stream",     null: false
+    t.integer  "position"
+    t.string   "event_id",   null: false
+    t.datetime "created_at", null: false
+    t.index ["created_at"], name: "index_event_store_events_in_streams_on_created_at"
+    t.index ["stream", "event_id"], name: "index_event_store_events_in_streams_on_stream_and_event_id", unique: true
+    t.index ["stream", "position"], name: "index_event_store_events_in_streams_on_stream_and_position", unique: true
   end
 
 end
