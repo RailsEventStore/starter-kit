@@ -7,7 +7,7 @@ end
 
 
 gem 'rails_event_store', '0.26.0'
-gem 'arkency-command_bus'
+gem 'arkency-command_bus', '0.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'
