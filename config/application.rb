@@ -9,7 +9,10 @@ Bundler.require(*Rails.groups)
 
 module StarterKit
   class Application < Rails::Application
-    config.event_store = RailsEventStore::Client.new
+    config.to_prepare do
+      Rails.configuration.event_store = RailsEventStore::Client.new
+      # add subscribers here
+    end 
   end
 end
 
