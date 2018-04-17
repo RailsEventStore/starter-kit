@@ -12,10 +12,10 @@ module StarterKit
     config.to_prepare do
       Rails.configuration.event_store = RailsEventStore::Client.new
       # add subscribers here
-    end 
-  end
-end
 
-AggregateRoot.configure do |config|
-  config.default_event_store = Rails.configuration.event_store
+      AggregateRoot.configure do |config|
+        config.default_event_store = Rails.configuration.event_store
+      end
+    end
+  end
 end
