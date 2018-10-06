@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails_event_store', '0.26.0'
+gem 'rails_event_store', '0.32.0'
 gem 'arkency-command_bus', '0.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
