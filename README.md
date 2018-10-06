@@ -22,7 +22,7 @@ It is ready to work with the `aggregate_root` gem. The configuration gives the i
 It comes with the bounded_context gem so a likely next step is to generate a bounded context with:
 
 ```
-rails generate bounded_context:generator Sales
+rails generate bounded_context:bounded_context Sales
 ```
 
 The code here is meant to work with Rails autoloading.
