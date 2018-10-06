@@ -8,7 +8,7 @@ The expected flow is to clone this repo and start working on your event-driven R
 
 ```
 git clone ...
-rails db:setup
+rails db:migrate
 ```
 
 It works with sqlite3 database as a (Rails) default.
